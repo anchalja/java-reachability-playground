@@ -10,4 +10,4 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: npm install -g snyk
-      - run: snyk auth [b1bdc3c8-4d26-4c11-a745-8b6cd4dec255]
+      - run: snyk auth [25fb3a3d-e17e-48d7-b374-ce7cc3d3ab28]
