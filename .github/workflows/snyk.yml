@@ -8,9 +8,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - uses: snyk/actions/maven@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       - run: npm install -g bats
       - run: npm install -g snyk
       - run: snyk auth [b1bdc3c8-4d26-4c11-a745-8b6cd4dec255]
