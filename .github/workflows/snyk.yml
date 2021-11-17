@@ -1,19 +1,12 @@
-name: Snyk example
-on: push
+name: learn-github-actions
+on: [push]
 jobs:
-  security:
+  check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: snyk/actions/setup@master
-      - uses: actions/setup-go@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          go-version: '1.13'
-      - name: Snyk CLI
-        run: npm i -g snyk
-      - name: Snyk authentication
-        run: snyk auth
-      - name: Snyk monitor
-        run: snyk test
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
