@@ -11,8 +11,8 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
       - name: Run Snyk to check for vulnerabilities
-      - uses: snyk/actions/maven@master
+        uses: snyk/actions/maven@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      - run: npm i -g snyk
+          run: npm i -g snyk
       - run: snyk auth
