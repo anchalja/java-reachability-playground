@@ -11,7 +11,4 @@ jobs:
       - run: npm install -g bats
       - run: npm install -g snyk
       - run: snyk auth 9e78624a-31fe-4f96-b96f-caab1830528f
-      - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/maven@master
-      - name: To Scan
-        run: snyk test
+      - run: snyk test
