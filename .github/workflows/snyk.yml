@@ -9,8 +9,6 @@ jobs:
         with:
           node-version: '14'
       - uses: snyk/actions/maven@master
-        continue-on-error: true    
-      - run: npm install -g bats
-      - run: npm install -g snyk
+        continue-on-error: true
       - run: snyk auth 9e78624a-31fe-4f96-b96f-caab1830528f
       - run: snyk test
