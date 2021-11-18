@@ -1,7 +1,7 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  run-snyk-scan:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -10,5 +10,6 @@ jobs:
           node-version: '14'
       - uses: snyk/actions/maven@master
         continue-on-error: true
+      - run: install i -g snyk  
       - run: snyk auth 9e78624a-31fe-4f96-b96f-caab1830528f
       - run: snyk test
