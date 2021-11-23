@@ -12,5 +12,5 @@ jobs:
         continue-on-error: true
       - run: npm install -g snyk  
       - run: snyk auth 9e78624a-31fe-4f96-b96f-caab1830528f
-      - run: snyk test
-      - run: snyk monitor
+      - run: snyk test --all-projects
+      - run: snyk monitor --all-projects
